@@ -1,0 +1,31 @@
+.single-product{
+    border-radius: 20px;
+    padding: 20px;
+}
+.single-product img{
+    width: 100%;
+    max-height: 223px;
+}
+.car-brand{
+    background-color: #ff4640d2;
+    display: inline;
+    padding: 3px 15px;
+    color: #fff;
+    border-radius: 25px;
+
+}
+.flexible{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.car-important-info{
+    width: 100%;
+    border: 1px solid #e7dfdfd2;
+    text-align: center;
+}
+.car-important-info h6{
+    margin: 0;
+    padding: 0;
+    padding: 10px 0;
+}

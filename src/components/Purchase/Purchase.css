@@ -1,0 +1,26 @@
+.purchase{
+    display: flex;
+    align-items: center;
+}
+.purchase-form-container input{
+    width: 100%;
+    margin: 3px 0;
+    padding: 8px 13px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+.purchase-form{
+    background-color: rgba(205, 134, 63, 0.795);
+    margin: 20px;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.purchase-product-container{
+    border: 2px dotted rgba(205, 134, 63, 0.795);
+    border-radius: 30px;
+}
+.purchase-product-container img{
+    width: 100%;
+}

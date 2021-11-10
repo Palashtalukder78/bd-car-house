@@ -63,7 +63,8 @@ const useFirebase = () => {
         createUser,
         loginUser,
         logOut,
-        isLoading
+        isLoading,
+        setIsLoading
     }
 };
 

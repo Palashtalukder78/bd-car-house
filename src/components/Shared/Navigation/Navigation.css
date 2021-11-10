@@ -5,16 +5,16 @@
     color: #FF4640;
 }
 .my-btn{
-    background-color: #FF4640 !important;
-    color: #ffffff !important;
     font-weight: 700 !important;
+    background-color: #FF4640 !important;
+    color: #fff !important;
 }
 .logout-btn{
-    margin-left: 25px;
+    margin-left: 30px;
 }
 .menu{
     text-decoration: none;
-    margin-left: 25px;
+    margin-left: 30px;
     font-size: 16px;
     font-weight: 500;
     color: #ff928e;
@@ -22,3 +22,74 @@
 .menu:hover{
     color: rgb(233, 217, 217);
 }
+
+.my-btn {
+    z-index: 1;
+    position: relative;
+    font-size: inherit;
+    font-family: inherit;
+    color: white;
+    padding: 0.5em 1em;
+    outline: none;
+    border: none;
+    background-color: hsl(236, 32%, 26%);
+  }
+  
+  .my-btn::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(1, 1, 58);
+    transform-origin: center right;
+    transform: scaleX(0);
+    transition: transform 0.25s ease-in-out;
+  }
+  
+  .my-btn:hover {
+    cursor: pointer;
+  }
+  
+  .my-btn:hover::before {
+    transform-origin: center left;
+    transform: scaleX(1);
+  }
+
+
+  .menu {
+    position: relative;
+  }
+  
+  .menu::before, .menu::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #fc2f70;
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+  }
+  
+  .menu::before {
+    top: 0;
+    transform-origin: center right;
+  }
+  
+  .menu:hover::before {
+    transform-origin: center left;
+    transform: scaleX(1);
+  }
+  
+  .menu::after {
+    bottom: 0;
+    transform-origin: center left;
+  }
+  
+  .menu:hover::after {
+    transform-origin: center right;
+    transform: scaleX(1);
+  }
