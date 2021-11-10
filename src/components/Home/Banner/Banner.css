@@ -1,0 +1,49 @@
+body{
+    overflow-x: hidden;
+}
+.banner{
+    padding: 70px 0;
+}
+.banner-content{
+    background-color: #ff4640d2;
+    border-radius: 0 210px 210px 0;
+}
+.content{
+    margin: 60px 20px;
+    text-align: center;
+}
+.banner-content h1{
+    font-weight: 700;
+    color: rgb(255, 253, 253);
+}
+.banner-content p{
+    font-size: 16px;
+    color: #fff;
+}
+.banner-btn{
+    border: none;
+    padding: 5px 15px;
+    background-color: #ffffff ;
+    color: #ff4640d2 ;
+    font-size: 18px ;
+    font-weight: 600 ;
+    transition: 0.5s ;
+    border-radius: 5px;
+}
+.banner-btn:hover{
+    background-color: rgba(253, 179, 94, 0.637) !important;
+    color: #ffffff !important;
+}
+@media only screen and (max-width:668px){
+    .banner-content{
+        width: 90% !important;
+        text-align: left !important;
+    }
+    .content{
+        margin: 25px 5px;
+        text-align: left;
+    }
+    .banner{
+        padding: 50px 0;
+    }
+}

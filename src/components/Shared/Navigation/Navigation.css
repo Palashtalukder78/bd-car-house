@@ -1,0 +1,21 @@
+.navigation img{
+    width: 75px;
+}
+.my-color{
+    color: #FF4640;
+}
+.my-btn{
+    background-color: #FF4640 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+.menu{
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ff928e;
+}
+.menu:hover{
+    color: rgb(233, 217, 217);
+}
