@@ -1,9 +1,17 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 import logo from '../../../images/logo.png';
+import { useHistory } from 'react-router';
 import './Navigation.css'
 const Navigation = () => {
+    const { allFirebase } = useAuth();
+    const { user, logOut } = allFirebase;
+    const history = useHistory();
+    const handleLogout = () => {
+        logOut(history);
+    }
     return (
         <Navbar collapseOnSelect expand="lg" className="navigation">
             <Container>
@@ -23,13 +31,20 @@ const Navigation = () => {
                         }} to="/dashboard">
                             DASHBOARD
                         </NavLink>
-                        <NavLink className="menu" activeStyle={{
-                            fontWeight: "bold"
-                        }} to="/login">
-                            <button className="btn btn-sm my-btn">
-                                LOGIN
+
+                        {user?.email ?
+                            <button onClick={handleLogout} className="btn btn-sm my-btn logout-btn">
+                                LOGOUT
                             </button>
-                        </NavLink>
+                            :
+                            <NavLink className="menu" activeStyle={{
+                                fontWeight: "bold"
+                            }} to="/login">
+                                <button className="btn btn-sm my-btn">
+                                    LOGIN
+                                </button>
+                            </NavLink>
+                        }
                     </Nav>
                 </Navbar.Collapse>
             </Container>

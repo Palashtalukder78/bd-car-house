@@ -6,9 +6,12 @@ import {
 } from "react-router-dom";
 import Home from './components/Home/Home/Home';
 import Login from './components/Login/Login';
+import AuthProvider from './contexts/AuthProvider';
+import Dashboard from './components/Dashboard/Dashboard/Dashboard';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 function App() {
   return (
-    <div >
+    <AuthProvider>
       <Router>
         <Switch>
           <Route exact path="/">
@@ -17,15 +20,15 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
-          <Route path="/dashboard">
-            <Home></Home>
-          </Route>
+          <PrivateRoute path="/dashboard">
+            <Dashboard></Dashboard>
+          </PrivateRoute>
           <Route path="/login">
             <Login></Login>
           </Route>
         </Switch>
       </Router>
-    </div>
+    </AuthProvider>
   );
 }
 

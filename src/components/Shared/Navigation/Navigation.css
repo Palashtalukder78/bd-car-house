@@ -9,6 +9,9 @@
     color: #ffffff !important;
     font-weight: 700 !important;
 }
+.logout-btn{
+    margin-left: 25px;
+}
 .menu{
     text-decoration: none;
     margin-left: 25px;
