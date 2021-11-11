@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Facilities.css'
 import photo from '../../../images/facilities-photo.jpeg'
 import borderPhoto from '../../../images/car_border.png'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Facilities = () => {
+    useEffect(() => {
+        AOS.init();
+    }, []);
     return (
         <div style={{ margin: "0 !important", maxWidth: "100%", overflowX: "hidden" }} className="m-0 p-0">
             <div className="row my-5 facility-container">
-                <div className="col-md-6 p-0 h-100">
+                <div className="col-md-6 p-0 h-100" data-aos="fade-right" data-aos-delay="500">
                     <img className="w-100 img-fluid" src={photo} alt="" />
                 </div>
-                <div className="col-md-6 why-choose-us p-0">
+                <div className="col-md-6 why-choose-us p-0" data-aos="fade-left" data-aos-delay="500">
                     <div className="why-choose-us-content">
                         <div className="facility-title">
                             <h3 className="section-title">ARE YOU LOOKING FOR A CAR ?</h3>
