@@ -1,0 +1,32 @@
+.facility-container{
+    display: flex;
+    align-items: center;
+}
+.why-choose-us{
+    background-color: rgba(255, 255, 255, 0.938);
+}
+.why-choose-us-content{
+    padding:  0 40px;
+}
+.icon-content{
+    display: flex;
+    align-items: center;
+}
+.icon-content i{
+    width: 70px;
+    background-color: #ff4640d2;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 50%;
+    margin-right: 20PX;
+    color: #FFFFFF;
+    border: 4px solid rgb(166, 218, 150);
+}
+
+@media only screen and (max-width: 678px){
+    .facility-title{
+        text-align: center;
+        margin: 20px 0;
+    }
+}

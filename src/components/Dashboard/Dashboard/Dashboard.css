@@ -1,0 +1,18 @@
+.dashboard-header{
+    background-color: #F63E7B;
+}
+.side-menu{
+    text-decoration: none;
+    color: #F63E7B;
+    font-weight: 600;
+}
+.side-menu:hover{
+    color: rgb(211, 50, 50);
+}
+.dashboard-header-flexible h6{
+    display: block;
+}
+.dashboard-logout{
+    color: #F63E7B;
+    font-weight: 600;
+}
