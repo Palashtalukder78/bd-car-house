@@ -29,7 +29,7 @@
     font-size: inherit;
     font-family: inherit;
     color: white;
-    padding: 0.5em 1em;
+    /* padding: 0.5em 1em; */
     outline: none;
     border: none;
     background-color: hsl(236, 32%, 26%);

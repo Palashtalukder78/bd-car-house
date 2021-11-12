@@ -34,13 +34,14 @@ import DashboardHome from '../DashboardHome/DashboardHome';
 import useAuth from '../../../hooks/useAuth';
 import { useHistory } from 'react-router';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
-import MakeAdmin from '../MakeAdmin/MakeAdmin';
-import AddProducts from '../AddProducts/AddProducts';
+
 import Pay from '../Costomer/Pay/Pay';
 import MyOrders from '../Costomer/MyOrders/MyOrders';
 import MakeAReview from '../Costomer/MakeAReview/MakeAReview';
 import ManageAllOrder from '../Admin/ManageAllOrder/ManageAllOrder';
 import ManageProducts from '../Admin/ManageProducts/ManageProducts';
+import MakeAdmin from '../Admin/MakeAdmin/MakeAdmin';
+import AddProducts from '../Admin/AddProducts/AddProducts';
 const drawerWidth = 220;
 function Dashboard(props) {
     const { allFirebase } = useAuth();
@@ -115,15 +116,6 @@ function Dashboard(props) {
                         <ListItemText />
                     </ListItem>
                 </NavLink>
-                <NavLink className="side-menu" to={`${url}/manageAllOrder`}>
-                    <ListItem button>
-                        <ListItemIcon>
-                            {<ListAltIcon />}
-                        </ListItemIcon>
-                        Manage All Order
-                        <ListItemText />
-                    </ListItem>
-                </NavLink>
                 <NavLink className="side-menu" to={`${url}/addProducts`}>
                     <ListItem button>
                         <ListItemIcon>
@@ -139,6 +131,15 @@ function Dashboard(props) {
                             {<ManageSearchIcon />}
                         </ListItemIcon>
                         Manage Products
+                        <ListItemText />
+                    </ListItem>
+                </NavLink>
+                <NavLink className="side-menu" to={`${url}/manageAllOrder`}>
+                    <ListItem button>
+                        <ListItemIcon>
+                            {<ListAltIcon />}
+                        </ListItemIcon>
+                        Manage All Order
                         <ListItemText />
                     </ListItem>
                 </NavLink>
@@ -176,7 +177,7 @@ function Dashboard(props) {
                     ml: { sm: `${drawerWidth}px` },
                 }}
             >
-                <Toolbar className="dashboard-header shadow">
+                <Toolbar className="dashboard-header" >
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -215,7 +216,7 @@ function Dashboard(props) {
                 <Drawer
                     variant="permanent"
                     sx={{
-                        display: { xs: 'none', sm: 'block' },
+                        display: { xs: 'none', sm: 'block', },
                         '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
                     }}
                     open
@@ -228,33 +229,36 @@ function Dashboard(props) {
                 sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
                 <Toolbar />
-                <Switch>
-                    <Route exact path={path}>
-                        <DashboardHome></DashboardHome>
-                    </Route>
-                    <Route path={`${path}/pay`}>
-                        <Pay></Pay>
-                    </Route>
-                    <Route path={`${path}/myOrders`}>
-                        <MyOrders></MyOrders>
-                    </Route>
-                    <Route path={`${path}/makeAReview`}>
-                        <MakeAReview></MakeAReview>
-                    </Route>
 
-                    <Route path={`${path}/manageAllOrder`}>
-                        <ManageAllOrder></ManageAllOrder>
-                    </Route>
-                    <Route path={`${path}/addProducts`}>
-                        <AddProducts></AddProducts>
-                    </Route>
-                    <Route path={`${path}/manageProducts`}>
-                        <ManageProducts></ManageProducts>
-                    </Route>
-                    <Route path={`${path}/makeAdmin`}>
-                        <MakeAdmin></MakeAdmin>
-                    </Route>
-                </Switch>
+                <div>
+                    <Switch>
+                        <Route exact path={path}>
+                            <DashboardHome></DashboardHome>
+                        </Route>
+                        <Route path={`${path}/pay`}>
+                            <Pay></Pay>
+                        </Route>
+                        <Route path={`${path}/myOrders`}>
+                            <MyOrders></MyOrders>
+                        </Route>
+                        <Route path={`${path}/makeAReview`}>
+                            <MakeAReview></MakeAReview>
+                        </Route>
+
+                        <Route path={`${path}/manageAllOrder`}>
+                            <ManageAllOrder></ManageAllOrder>
+                        </Route>
+                        <Route path={`${path}/addProducts`}>
+                            <AddProducts></AddProducts>
+                        </Route>
+                        <Route path={`${path}/manageProducts`}>
+                            <ManageProducts></ManageProducts>
+                        </Route>
+                        <Route path={`${path}/makeAdmin`}>
+                            <MakeAdmin></MakeAdmin>
+                        </Route>
+                    </Switch>
+                </div>
             </Box>
         </Box>
     );

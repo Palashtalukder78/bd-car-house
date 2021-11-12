@@ -35,7 +35,7 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
     const saveUser = (email, displayName, method) => {
-        const user = { email, displayName }
+        const user = { email: email, displayName: displayName, role: "customer" }
         fetch('https://agile-woodland-06952.herokuapp.com/users', {
             method: method,
             headers: {

@@ -5,12 +5,11 @@ import useAuth from '../../hooks/useAuth';
 import Navigation from '../Shared/Navigation/Navigation';
 import './Purchase.css';
 import swal from 'sweetalert';
-import { CircularProgress } from '@mui/material';
 const Purchase = () => {
     const { id } = useParams();
     const [product, setProduct] = useState([]);
     const { allFirebase } = useAuth();
-    const { user, isLoading, setIsLoading } = allFirebase;
+    const { user, setIsLoading } = allFirebase;
     const history = useHistory();
     useEffect(() => {
         const url = `https://agile-woodland-06952.herokuapp.com/products/${id}`
@@ -98,10 +97,10 @@ const Purchase = () => {
                             <div className="purchase-form shadow">
                                 <form onSubmit={handleOrder}>
                                     <h4 className="text-center">Customer Information</h4>
-                                    <input defaultValue={user.displayName} ref={nameRef} type="text" />
+                                    <input defaultValue={user.displayName} ref={nameRef} type="text" required />
                                     <input ref={emailRef} type="email" defaultValue={user?.email} disabled />
-                                    <input ref={addressRef} type="text" placeholder="Address" />
-                                    <input ref={phoneRef} type="number" placeholder="Phone Number" />
+                                    <input ref={addressRef} type="text" placeholder="Address" required />
+                                    <input ref={phoneRef} type="number" placeholder="Phone Number" required />
                                     <hr />
                                     <h4 className="text-center p-0 m-0">Product Information</h4>
                                     <span className="text-center d-block">You can't changes the Products Info</span>
