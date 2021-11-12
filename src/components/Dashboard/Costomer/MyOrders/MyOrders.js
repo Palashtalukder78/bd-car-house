@@ -25,6 +25,7 @@ const MyOrders = () => {
                 }
             </div>
         </div>
+
     );
 };
 

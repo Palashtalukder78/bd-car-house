@@ -7,6 +7,7 @@ const useFirebase = () => {
     const auth = getAuth();
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
+    const [admin, setAdmin] = useState(false);
     const createUser = (email, password, displayName, history, location) => {
         setIsLoading(true)
         createUserWithEmailAndPassword(auth, email, password)
@@ -48,7 +49,7 @@ const useFirebase = () => {
         setIsLoading(true)
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                const redirect_url = location?.state?.from || '/home'
+                const redirect_url = location?.state?.from || '/dashboard'
                 history.replace(redirect_url)
                 swal("Welcome", "Login Successfully", "success");
             })
@@ -68,6 +69,17 @@ const useFirebase = () => {
             setIsLoading(false)
         });
     }, [auth])
+
+    //Check admin
+    useEffect(() => {
+        fetch(`https://agile-woodland-06952.herokuapp.com/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data.admin);
+                setAdmin(data.admin)
+            })
+    }, [user.email])
+
     const logOut = (history) => {
         setIsLoading(true)
         signOut(auth).then(() => {
@@ -82,6 +94,7 @@ const useFirebase = () => {
     }
     return {
         user,
+        admin,
         createUser,
         loginUser,
         logOut,

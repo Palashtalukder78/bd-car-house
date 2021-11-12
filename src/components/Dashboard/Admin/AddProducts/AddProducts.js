@@ -1,6 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './AddProcusts.css'
 import swal from 'sweetalert';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const AddProducts = () => {
     const brandRef = useRef();
     const modelRef = useRef();
@@ -9,7 +11,9 @@ const AddProducts = () => {
     const priceRef = useRef();
     const photoRef = useRef();
     const descriptionRef = useRef();
-
+    useEffect(() => {
+        AOS.init();
+    }, []);
     const handleAdProduct = (e) => {
         const brand = brandRef.current.value;
         const model = modelRef.current.value;
@@ -46,19 +50,19 @@ const AddProducts = () => {
     }
 
     return (
-        <div>
+        <div data-aos="fade-down" data-aos-delay="500">
             <div className="row">
                 <div className="col-md-5 mx-auto">
                     <div className="add-product-form shadow">
                         <form onSubmit={handleAdProduct}>
                             <h3 className="text-center my-color">Add Products</h3>
-                            <input ref={brandRef} className="form-control mb-2 " type="text" placeholder="Brand Name" />
-                            <input ref={modelRef} className="form-control mb-2 " type="text" placeholder="Model Name" />
-                            <input ref={yearRef} className="form-control mb-2 " type="text" placeholder="Release Year" />
-                            <input ref={milagesRef} className="form-control mb-2 " type="text" placeholder="Milages (kilometer)" />
-                            <input ref={priceRef} className="form-control mb-2 " type="text" placeholder="Car Price" />
-                            <input ref={photoRef} className="form-control mb-2 " type="text" placeholder="Photo URL" />
-                            <textarea ref={descriptionRef} className="form-control mb-2 " name="" id="" cols="30" rows="3" placeholder="Car's Description" ></textarea>
+                            <input ref={brandRef} className="form-control mb-2 " type="text" placeholder="Brand Name" required />
+                            <input ref={modelRef} className="form-control mb-2 " type="text" placeholder="Model Name" required />
+                            <input ref={yearRef} className="form-control mb-2 " type="text" placeholder="Release Year" required />
+                            <input ref={milagesRef} className="form-control mb-2 " type="text" placeholder="Milages (kilometer)" required />
+                            <input ref={priceRef} className="form-control mb-2 " type="text" placeholder="Car Price" required />
+                            <input ref={photoRef} className="form-control mb-2 " type="text" placeholder="Photo URL" required />
+                            <textarea ref={descriptionRef} className="form-control mb-2 " name="" id="" cols="30" rows="3" placeholder="Car's Description" required></textarea>
                             <div className="d-grid ">
                                 <button className="btn btn-sm my-btn">Add Product</button>
                             </div>

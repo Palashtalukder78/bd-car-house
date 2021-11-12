@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/esm/Table';
 import useAuth from '../../../../hooks/useAuth';
 import './MakeAdmin.css'
 import swal from 'sweetalert';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const MakeAdmin = () => {
     const { allUser } = useAuth();
     const { users } = allUser;
@@ -11,6 +13,9 @@ const MakeAdmin = () => {
     const handleEmail = (e) => {
         setEmail(e.target.value)
     }
+    useEffect(() => {
+        AOS.init();
+    }, []);
     const handleMakeAdmin = (e) => {
         const user = { email }
         swal("Do you want Dete this Product ?")
@@ -36,7 +41,7 @@ const MakeAdmin = () => {
     return (
         <div>
             <div className="row">
-                <div className="col-md-6 my-2">
+                <div className="col-md-6 my-2" data-aos="fade-right" data-aos-delay="500">
                     <div className="make-admin-form shadow">
                         <form onSubmit={handleMakeAdmin}>
                             <h3 className="text-center my-color">Make Admin</h3>
@@ -47,7 +52,7 @@ const MakeAdmin = () => {
                         </form>
                     </div>
                 </div>
-                <div className="col-md-6 my-2">
+                <div className="col-md-6 my-2" data-aos="fade-left" data-aos-delay="500">
                     <h3 className="my-color">Total users: {users?.length}</h3>
                     <Table striped bordered hover responsive>
                         <thead>

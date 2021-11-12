@@ -1,0 +1,20 @@
+.footer{
+    background-color: #ff4640d2;
+}
+.social-icon a{
+    font-size: 35px;
+    margin: 10px;
+    color: #fff;
+}
+.footer-address{
+    display: flex;
+    align-items: center;
+    padding: 0 0;
+}
+.footer-address i{
+    font-size: 20px;
+    padding: 12px;
+}
+.copy-right{
+    background-color: #f8352fd2;;
+}

@@ -3,7 +3,6 @@ import { Checkbox, CircularProgress, FormControlLabel, TextField } from '@mui/ma
 import { Container } from 'react-bootstrap';
 import Navigation from '../Shared/Navigation/Navigation';
 import './Login.css';
-import GoogleIcon from '@mui/icons-material/Google';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useHistory, useLocation } from 'react-router';
@@ -121,17 +120,6 @@ const Login = () => {
                                         />
                                     </div>
                                 </form>
-                            </div>
-                            <h6 className="text-center mt-2 p-0">OR</h6>
-                            <div>
-                                <div onClick="{handleGoogleSign} " className="google-signIn shadow">
-                                    <div>
-                                        <GoogleIcon className="google-icon" />
-                                    </div>
-                                    <div>
-                                        Signin using Google
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

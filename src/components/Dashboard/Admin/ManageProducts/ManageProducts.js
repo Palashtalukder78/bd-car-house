@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Table from 'react-bootstrap/esm/Table';
 import useAuth from '../../../../hooks/useAuth';
 import swal from 'sweetalert';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const ManageProducts = () => {
     const { allProduct } = useAuth();
     const { products } = allProduct;
-
+    useEffect(() => {
+        AOS.init();
+    }, []);
     const handleProductDelete = (id) => {
         swal("Do you want Dete this Product ?")
             .then(value => {
@@ -24,7 +28,7 @@ const ManageProducts = () => {
             })
     }
     return (
-        <div style={{ overflowX: "hidden" }}>
+        <div style={{ overflowX: "hidden" }} data-aos="fade-down" data-aos-delay="500">
             <h3>All Cars: {products?.length}</h3>
             <div className="row">
                 <div className="col">

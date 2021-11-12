@@ -42,10 +42,11 @@ import ManageAllOrder from '../Admin/ManageAllOrder/ManageAllOrder';
 import ManageProducts from '../Admin/ManageProducts/ManageProducts';
 import MakeAdmin from '../Admin/MakeAdmin/MakeAdmin';
 import AddProducts from '../Admin/AddProducts/AddProducts';
+import AdminRoute from '../AdminRoute/AdminRoute';
 const drawerWidth = 220;
 function Dashboard(props) {
     const { allFirebase } = useAuth();
-    const { user, logOut } = allFirebase;
+    const { user, logOut, admin } = allFirebase;
     const history = useHistory();
     const handleLogOut = () => {
         logOut(history)
@@ -75,37 +76,6 @@ function Dashboard(props) {
                         <ListItemText />
                     </ListItem>
                 </NavLink>
-
-                <Divider />
-                <NavLink className="side-menu" to={`${url}/pay`}>
-                    <ListItem button>
-                        <ListItemIcon>
-                            {<PaymentsIcon />}
-                        </ListItemIcon>
-                        Pay
-                        <ListItemText />
-                    </ListItem>
-                </NavLink>
-                <NavLink className="side-menu" to={`${url}/myOrders`}>
-                    <ListItem button>
-                        <ListItemIcon>
-                            {<ShoppingBasketIcon />}
-                        </ListItemIcon>
-                        My Orders
-                        <ListItemText />
-                    </ListItem>
-                </NavLink>
-                <NavLink className="side-menu" to={`${url}/makeAReview`}>
-                    <ListItem button>
-                        <ListItemIcon>
-                            {<RateReviewIcon />}
-                        </ListItemIcon>
-                        Make a review
-                        <ListItemText />
-                    </ListItem>
-                </NavLink>
-
-                <Divider />
                 <NavLink className="side-menu" to={`${url}`}>
                     <ListItem button>
                         <ListItemIcon>
@@ -115,43 +85,80 @@ function Dashboard(props) {
                         <ListItemText />
                     </ListItem>
                 </NavLink>
-                <NavLink className="side-menu" to={`${url}/addProducts`}>
-                    <ListItem button>
-                        <ListItemIcon>
-                            {<AddBusinessIcon />}
-                        </ListItemIcon>
-                        Add Product
-                        <ListItemText />
-                    </ListItem>
-                </NavLink>
-                <NavLink className="side-menu" to={`${url}/manageProducts`}>
-                    <ListItem button>
-                        <ListItemIcon>
-                            {<ManageSearchIcon />}
-                        </ListItemIcon>
-                        Manage Products
-                        <ListItemText />
-                    </ListItem>
-                </NavLink>
-                <NavLink className="side-menu" to={`${url}/manageAllOrder`}>
-                    <ListItem button>
-                        <ListItemIcon>
-                            {<ListAltIcon />}
-                        </ListItemIcon>
-                        Manage All Order
-                        <ListItemText />
-                    </ListItem>
-                </NavLink>
-                <NavLink className="side-menu" to={`${url}/makeAdmin`}>
-                    <ListItem button>
-                        <ListItemIcon>
-                            {<AdminPanelSettingsIcon />}
-                        </ListItemIcon>
-                        Make Admin
-                        <ListItemText />
-                    </ListItem>
-                </NavLink>
-                <Divider />
+                {!admin &&
+                    <Box>
+                        <NavLink className="side-menu" to={`${url}/pay`}>
+                            <ListItem button>
+                                <ListItemIcon>
+                                    {<PaymentsIcon />}
+                                </ListItemIcon>
+                                Pay
+                                <ListItemText />
+                            </ListItem>
+                        </NavLink>
+                        <NavLink className="side-menu" to={`${url}/myOrders`}>
+                            <ListItem button>
+                                <ListItemIcon>
+                                    {<ShoppingBasketIcon />}
+                                </ListItemIcon>
+                                My Orders
+                                <ListItemText />
+                            </ListItem>
+                        </NavLink>
+                        <NavLink className="side-menu" to={`${url}/makeAReview`}>
+                            <ListItem button>
+                                <ListItemIcon>
+                                    {<RateReviewIcon />}
+                                </ListItemIcon>
+                                Make a review
+                                <ListItemText />
+                            </ListItem>
+                        </NavLink>
+                        <Divider />
+                    </Box>
+                }
+
+                {admin &&
+                    <Box>
+                        <NavLink className="side-menu" to={`${url}/addProducts`}>
+                            <ListItem button>
+                                <ListItemIcon>
+                                    {<AddBusinessIcon />}
+                                </ListItemIcon>
+                                Add Product
+                                <ListItemText />
+                            </ListItem>
+                        </NavLink>
+                        <NavLink className="side-menu" to={`${url}/manageProducts`}>
+                            <ListItem button>
+                                <ListItemIcon>
+                                    {<ManageSearchIcon />}
+                                </ListItemIcon>
+                                Manage Products
+                                <ListItemText />
+                            </ListItem>
+                        </NavLink>
+                        <NavLink className="side-menu" to={`${url}/manageAllOrder`}>
+                            <ListItem button>
+                                <ListItemIcon>
+                                    {<ListAltIcon />}
+                                </ListItemIcon>
+                                Manage All Order
+                                <ListItemText />
+                            </ListItem>
+                        </NavLink>
+                        <NavLink className="side-menu" to={`${url}/makeAdmin`}>
+                            <ListItem button>
+                                <ListItemIcon>
+                                    {<AdminPanelSettingsIcon />}
+                                </ListItemIcon>
+                                Make Admin
+                                <ListItemText />
+                            </ListItem>
+                        </NavLink>
+                        <Divider />
+                    </Box>
+                }
                 <Divider /><Divider />
                 <div className=" dashboard-logout">
                     <ListItem button>
@@ -246,18 +253,18 @@ function Dashboard(props) {
                             <MakeAReview></MakeAReview>
                         </Route>
 
-                        <Route path={`${path}/manageAllOrder`}>
+                        <AdminRoute path={`${path}/manageAllOrder`}>
                             <ManageAllOrder></ManageAllOrder>
-                        </Route>
-                        <Route path={`${path}/addProducts`}>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/addProducts`}>
                             <AddProducts></AddProducts>
-                        </Route>
-                        <Route path={`${path}/manageProducts`}>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/manageProducts`}>
                             <ManageProducts></ManageProducts>
-                        </Route>
-                        <Route path={`${path}/makeAdmin`}>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/makeAdmin`}>
                             <MakeAdmin></MakeAdmin>
-                        </Route>
+                        </AdminRoute>
                     </Switch>
                 </div>
             </Box>

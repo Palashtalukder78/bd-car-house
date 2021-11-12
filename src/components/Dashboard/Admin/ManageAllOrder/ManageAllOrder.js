@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Table from 'react-bootstrap/esm/Table';
 import useAuth from '../../../../hooks/useAuth';
 import swal from 'sweetalert';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const ManageAllOrder = () => {
     const { allOrder } = useAuth();
     const { orders } = allOrder;
-
+    useEffect(() => {
+        AOS.init();
+    }, []);
     const handleMakeShiped = (id) => {
         swal("Do you sure to Shiped this order ?")
             .then((value) => {
@@ -28,7 +32,7 @@ const ManageAllOrder = () => {
             })
     }
     return (
-        <div>
+        <div data-aos="fade-down" data-aos-delay="500">
             <h3>Orders: {orders?.length}</h3>
             <div className="row">
                 <div className="col-12">

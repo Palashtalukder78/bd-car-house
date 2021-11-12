@@ -1,9 +1,12 @@
 import React from 'react';
+import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
+import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Banner from '../Banner/Banner';
 import Facilities from '../Facilities/Facilities';
 import Products from '../ProductsContainer/Products/Products';
+import Reviews from '../Reviews/Reviews/Reviews';
 import './Home.css'
 const Home = () => {
     const { allFirebase } = useAuth();
@@ -23,6 +26,8 @@ const Home = () => {
             </div>
             <Products></Products>
             <Facilities></Facilities>
+            <Reviews></Reviews>
+            <Footer></Footer>
         </div>
     );
 };

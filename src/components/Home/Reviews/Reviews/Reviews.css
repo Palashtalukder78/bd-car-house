@@ -1,0 +1,20 @@
+/* .App {
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  } */
+
+  .single-review {
+    text-align: center;
+  }
+.single-review img{
+  width: 80px;
+  height: 80px;
+  border: 3px solid red;
+  border-radius: 50%;
+}
+.single-review p{
+  font-size: 14px;
+}
