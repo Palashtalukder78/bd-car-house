@@ -57,9 +57,8 @@ function Dashboard(props) {
     };
     let { path, url } = useRouteMatch();
 
-
     const drawer = (
-        <div>
+        <div className="side-bar">
             <Toolbar style={{ alignItems: "center", justifyContent: "center" }}>
                 <div className="text-center">
                     <img style={{ height: "60px" }} className="img-fluid" src={logo} alt="logo" />
@@ -152,7 +151,9 @@ function Dashboard(props) {
                         <ListItemText />
                     </ListItem>
                 </NavLink>
-                <div className="fixed-bottom dashboard-logout">
+                <Divider />
+                <Divider /><Divider />
+                <div className=" dashboard-logout">
                     <ListItem button>
                         <ListItemIcon>
                             {<LogoutIcon />}
@@ -168,7 +169,7 @@ function Dashboard(props) {
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex' }} className="main-part">
             <CssBaseline />
             <AppBar
                 position="fixed"

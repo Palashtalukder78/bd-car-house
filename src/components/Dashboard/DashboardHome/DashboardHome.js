@@ -7,7 +7,7 @@ const DashboardHome = () => {
     const { orders } = allOrder;
     const { users } = allUser;
     return (
-        <div style={{ overflowX: "hidden !important" }}>
+        <div>
             <div className="row" >
                 <div className="col-md-8">
                     <h3>Orders: {orders?.length}</h3>

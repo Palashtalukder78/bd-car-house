@@ -1,5 +1,5 @@
 .dashboard-header{
-    background-color: #F63E7B;
+    background-color: #FF4640 ;
 }
 .side-menu{
     text-decoration: none;
@@ -16,3 +16,7 @@
     color: #F63E7B;
     font-weight: 600;
 }
+main {
+    width: 100%;
+  }
+
