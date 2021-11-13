@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 import Product from '../../Home/ProductsContainer/Product/Product';
+import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';
 
 const AllProduct = () => {
@@ -27,6 +28,7 @@ const AllProduct = () => {
                     </div>
                 }
             </Container>
+            <Footer></Footer>
         </>
     );
 };

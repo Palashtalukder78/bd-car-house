@@ -28,8 +28,8 @@ const DashboardHome = () => {
                                 </Link>
                             </Box>
                             :
-                            <Link to="/dashboard/manageProducts">
-                                <button className="btn btn-sm my-btn">Manage Products</button>
+                            <Link to="/dashboard/manageAllOrder">
+                                <button className="btn btn-sm my-btn">Manage All Orders</button>
                             </Link>
                         }
                     </div>

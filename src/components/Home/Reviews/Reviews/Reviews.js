@@ -22,7 +22,7 @@ const Reviews = () => {
     const { reviews } = allReviews;
     return (
         <Container data-aos="fade-down" data-aos-delay="500">
-            <h2 className="text-center mb-5">Client Reviews</h2>
+            <h2 className="text-center mb-4">Client Reviews</h2>
             <Carousel breakPoints={breakPoints}>
                 {
                     reviews.map(review => (

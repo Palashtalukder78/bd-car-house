@@ -18,7 +18,7 @@ const MakeAdmin = () => {
     }, []);
     const handleMakeAdmin = (e) => {
         const user = { email }
-        swal("Do you want Dete this Product ?")
+        swal("Do you want to make Admin ?")
             .then(value => {
                 if (value) {
                     fetch('https://agile-woodland-06952.herokuapp.com/users/admin', {

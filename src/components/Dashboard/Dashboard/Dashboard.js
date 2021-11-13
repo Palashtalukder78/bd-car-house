@@ -43,6 +43,7 @@ import ManageProducts from '../Admin/ManageProducts/ManageProducts';
 import MakeAdmin from '../Admin/MakeAdmin/MakeAdmin';
 import AddProducts from '../Admin/AddProducts/AddProducts';
 import AdminRoute from '../AdminRoute/AdminRoute';
+import PageNotFound from '../../PageNotFound/PageNotFound';
 const drawerWidth = 220;
 function Dashboard(props) {
     const { allFirebase } = useAuth();
@@ -161,11 +162,11 @@ function Dashboard(props) {
                 }
                 <Divider /><Divider />
                 <div className=" dashboard-logout">
-                    <ListItem button>
+                    <ListItem onClick={handleLogOut} button>
                         <ListItemIcon>
                             {<LogoutIcon />}
                         </ListItemIcon>
-                        <span onClick={handleLogOut}>Logout</span>
+                        <span >Logout</span>
                         <ListItemText />
                     </ListItem>
                 </div>
@@ -264,6 +265,9 @@ function Dashboard(props) {
                         </AdminRoute>
                         <AdminRoute path={`${path}/makeAdmin`}>
                             <MakeAdmin></MakeAdmin>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/*`}>
+                            <PageNotFound></PageNotFound>
                         </AdminRoute>
                     </Switch>
                 </div>

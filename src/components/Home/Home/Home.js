@@ -1,5 +1,4 @@
 import React from 'react';
-import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';

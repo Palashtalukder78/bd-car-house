@@ -4,7 +4,7 @@
 }
 .single-product img{
     width: 100%;
-    max-height: 223px;
+    max-height: 170px !important;
 }
 .car-brand{
     background-color: #ff4640d2;

@@ -4,23 +4,32 @@
 }
 .purchase-form-container input{
     width: 100%;
-    margin: 3px 0;
+    margin: 8px 0;
     padding: 8px 13px;
     border: none;
     border-radius: 20px;
     background-color: #ffffff;
 }
 .purchase-form{
-    background-color: rgba(205, 134, 63, 0.795);
+    background-color: #dfd1d0d2;
     margin: 20px;
-    padding: 30px;
+    padding: 20px;
     border-radius: 20px;
 }
 
 .purchase-product-container{
-    border: 2px dotted rgba(205, 134, 63, 0.795);
+    border: 2px dotted #ff4640d2;
     border-radius: 30px;
 }
 .purchase-product-container img{
     width: 100%;
+}
+
+@media only screen and (max-width: 678px){
+    .purchase-form{
+        margin: 20px 4px;
+    }
+    .purchase-product-container{
+        margin: 20px 4px;
+    }
 }

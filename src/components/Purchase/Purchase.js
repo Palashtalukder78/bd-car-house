@@ -97,18 +97,18 @@ const Purchase = () => {
                             <div className="purchase-form shadow">
                                 <form onSubmit={handleOrder}>
                                     <h4 className="text-center">Customer Information</h4>
-                                    <input defaultValue={user.displayName} ref={nameRef} type="text" required />
-                                    <input ref={emailRef} type="email" defaultValue={user?.email} disabled />
-                                    <input ref={addressRef} type="text" placeholder="Address" required />
-                                    <input ref={phoneRef} type="number" placeholder="Phone Number" required />
+                                    <input className="form-control" defaultValue={user.displayName} ref={nameRef} type="text" required />
+                                    <input className="form-control" ref={emailRef} type="email" defaultValue={user?.email} disabled />
+                                    <input className="form-control" ref={addressRef} type="text" placeholder="Address" required />
+                                    <input className="form-control" ref={phoneRef} type="number" placeholder="Phone Number" required />
                                     <hr />
                                     <h4 className="text-center p-0 m-0">Product Information</h4>
                                     <span className="text-center d-block">You can't changes the Products Info</span>
-                                    <input title="You can just see your Choosable product details. you can't modify it" type="text" defaultValue={brand} disabled />
-                                    <input title="You can just see your Choosable product details. you can't modify it" type="text" defaultValue={model} disabled />
-                                    <input r title="You can just see your Choosable product details. you can't modify it" type="text" defaultValue={milages} disabled />
-                                    <input title=" u can just see your Choosable product details. you can't modify it" type="text" defaultValue={year} disabled />
-                                    <input title="You can just see your Choosable product details. you can't modify it" type="text" defaultValue={price} disabled />
+                                    <input className="form-control" title="You can just see your Choosable product details. you can't modify it" type="text" defaultValue={brand} disabled />
+                                    <input className="form-control" title="You can just see your Choosable product details. you can't modify it" type="text" defaultValue={model} disabled />
+                                    <input className="form-control" r title="You can just see your Choosable product details. you can't modify it" type="text" defaultValue={milages} disabled />
+                                    <input className="form-control" title=" u can just see your Choosable product details. you can't modify it" type="text" defaultValue={year} disabled />
+                                    <input className="form-control" title="You can just see your Choosable product details. you can't modify it" type="text" defaultValue={price} disabled />
                                     <div className="d-grid my-3">
                                         <button className=" btn my-btn btn-sm">Order</button>
                                     </div>

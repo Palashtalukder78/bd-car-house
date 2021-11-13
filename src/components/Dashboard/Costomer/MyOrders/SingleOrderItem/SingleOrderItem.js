@@ -8,7 +8,7 @@ const SingleOrderItem = ({ order }) => {
         swal("Do you want cancel the order ?")
             .then(value => {
                 if (value) {
-                    const url = `https://agile-woodland-06952.herokuapp.com/${id}`;
+                    const url = `https://agile-woodland-06952.herokuapp.com/orders/${id}`;
                     fetch(url, {
                         method: 'DELETE'
                     })

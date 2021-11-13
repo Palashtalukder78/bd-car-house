@@ -43,7 +43,7 @@ const Footer = () => {
                             </div>
                             <div className="footer-address">
                                 <i className="fa fa-envelope"></i>
-                                <span>mediService.support@gmail.com</span>
+                                <span>bdcarhouse.support@bd.com</span>
                             </div>
                             <div className="footer-address">
                                 <i className="fa fa-phone"></i>

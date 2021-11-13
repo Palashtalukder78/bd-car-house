@@ -11,6 +11,7 @@ import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AllProduct from './components/AllProductContainer/AllProduct/AllProduct';
 import Purchase from './components/Purchase/Purchase';
+import PageNotFound from './components/PageNotFound/PageNotFound';
 function App() {
   return (
     <AuthProvider>
@@ -33,6 +34,9 @@ function App() {
           </PrivateRoute>
           <Route path="/login">
             <Login></Login>
+          </Route>
+          <Route path="*">
+            <PageNotFound></PageNotFound>
           </Route>
         </Switch>
       </Router>

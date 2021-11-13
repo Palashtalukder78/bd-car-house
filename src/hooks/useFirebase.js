@@ -75,7 +75,6 @@ const useFirebase = () => {
         fetch(`https://agile-woodland-06952.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data.admin);
                 setAdmin(data.admin)
             })
     }, [user.email])
